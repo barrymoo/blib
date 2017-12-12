@@ -1,6 +1,5 @@
 #include <blib/estd.hpp>
-#include <blib/files.hpp>
-#include <blib/types.hpp>
+#include <iostream>
 #include <functional>
 
 template <typename T>
@@ -31,15 +30,6 @@ int main() {
   // Reduce Working?
   auto d = bemii::reduce<int>(a, 0, sum);
   std::cout << d << "\n\n";
-
-  // Showing Types;
-  bemii::show_type(print<int>);
-
-  // Read CMakeLists.txt (not quite right)
-  auto f = bemii::read_file("../CMakeLists.txt");
-  //bemii::for_each(f, print<std::string>);
-
-  for (const auto &e: f) std::cout << e << '\n';
 
   return 0;
 }
