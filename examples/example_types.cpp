@@ -1,12 +1,12 @@
+#include <blib/estd.hpp>
 #include <blib/types.hpp>
-#include <functional>
-
-template <typename T>
-std::function<void(const T &)> print =
-    [](const T &t) { std::cout << t << '\n'; };
 
 int main() {
-  bemii::show_type(print<int>);
+    std::vector<int> a{1, 2, 3};
+    auto print = [](const auto &a){ std::cout << a << '\n'; };
 
-  return 0;
+    bemii::show_type(a);
+    bemii::show_type(print);
+
+    return 0;
 }

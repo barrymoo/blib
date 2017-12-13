@@ -1,6 +1,4 @@
 #include <docopt/docopt.h>
-#include <iostream>
-#include <string>
 
 static const std::string usage = R"(
 crc-interactive.py -- An interactive Slurm helper
@@ -21,11 +19,11 @@ Options:
   -b --mem <memory>               Memory in GB
   -a --account <account>          Specify a non-default account)";
 
-int main(int argc, const char** argv) {
-   std::map<std::string, docopt::value> args = docopt::docopt(usage,
-                                                              {argv + 1, argv + argc},
-                                                              true,
-                                                              "CRC Interactive 1.0");
+int main(int argc, const char **argv) {
+    std::map<std::string, docopt::value> args = docopt::docopt(usage,
+                                                               {argv + 1, argv + argc},
+                                                               true,
+                                                               "CRC Interactive 1.0");
 
     for (auto const &arg: args) {
         std::cout << arg.first << ": " << arg.second << '\n';
